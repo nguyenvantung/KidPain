@@ -10,25 +10,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/select_picture_btn_left"
-        android:id="@+id/btnBack"/>
+        android:id="@+id/btnBack"
+        android:visibility="visible"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/select_picture_btn_right"
         android:layout_alignParentRight="true"
-        android:id="@+id/btnNext"/>
+        android:id="@+id/btnNext"
+        android:visibility="gone"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="1/12"/>
+        android:text="1/12"
+        android:visibility="visible"/>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/btnBack"
         android:id="@+id/listItem"
-        android:layout_marginTop="10dp"/>
+        android:layout_margin="10dp"/>
 
 
 </RelativeLayout>

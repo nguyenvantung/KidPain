@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Tung Nguyen on 12/20/2016.
  */
-public abstract class BaseFragment extends Fragment{
+public abstract class BaseFragment extends Fragment {
 
     protected View rootView;
 
@@ -24,21 +24,26 @@ public abstract class BaseFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(getLayoutId(), container, false);
+        super.onCreateView(inflater, container, savedInstanceState);
+        if (rootView == null) {
+            rootView = inflater.inflate(getLayoutId(), container, false);
+        }
         ButterKnife.bind(this, rootView);
+        initView(rootView);
+        initData();
         return rootView;
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initView(rootView);
-        initData();
-    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        rootView = null;
     }
 
     abstract protected int getLayoutId();

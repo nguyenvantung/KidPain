@@ -17,12 +17,38 @@
         android:src="@drawable/main_play"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
-    <ImageView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/homeLayoutSound"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:id="@+id/homeSetting"
-        android:src="@drawable/main_sound_settings"
-        android:layout_centerVertical="true"/>
+        android:background="@drawable/main_sound_settings_bgr"
+        android:layout_centerVertical="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/homeSetting"
+            android:src="@drawable/main_sound_settings"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"/>
+        <ImageView
+            android:id="@+id/homeMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/item_music"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+        <ImageView
+            android:id="@+id/homeSound"
+            android:layout_below="@+id/homeMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/item_sound"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

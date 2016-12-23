@@ -4,18 +4,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import color.kidpaint.com.kidpaintcolor.R;
 
 /**
  * Created by Tung Nguyen on 12/22/2016.
  */
 public class ChoiseFragmentAdapter extends RecyclerView.Adapter<ChoiseViewholder>{
-    private List<Integer> listData = new ArrayList<>();
+    private int[] listData ;
 
-    public ChoiseFragmentAdapter(List<Integer> listData){
+    public ChoiseFragmentAdapter(int[] listData){
         this.listData = listData;
     }
 
@@ -26,11 +23,11 @@ public class ChoiseFragmentAdapter extends RecyclerView.Adapter<ChoiseViewholder
 
     @Override
     public void onBindViewHolder(ChoiseViewholder holder, int position) {
-        holder.setData(listData.get(position));
+        holder.setData(listData[position]);
     }
 
     @Override
     public int getItemCount() {
-        return listData.size();
+        return listData.length;
     }
 }
