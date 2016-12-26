@@ -11,16 +11,22 @@ import color.kidpaint.com.kidpaintcolor.R;
 /**
  * Created by Tung Nguyen on 12/22/2016.
  */
-public class ChoiseViewholder extends RecyclerView.ViewHolder {
+public class ChoiseViewholder extends RecyclerView.ViewHolder implements View.OnClickListener{
     @Bind(R.id.imgItem)
     ImageView imageView;
 
     public ChoiseViewholder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
+        itemView.setOnClickListener(this);
     }
 
     public void setData(int drawable) {
        imageView.setImageDrawable(imageView.getContext().getDrawable(drawable));
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
