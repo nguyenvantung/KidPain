@@ -22,6 +22,7 @@
         android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:background="@drawable/main_sound_settings_bgr"
+        android:layout_marginLeft="@dimen/main_sound_margin_left"
         android:layout_centerVertical="true">
         <ImageView
             android:layout_width="wrap_content"

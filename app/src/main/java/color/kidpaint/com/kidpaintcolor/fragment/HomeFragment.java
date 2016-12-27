@@ -1,6 +1,8 @@
 package color.kidpaint.com.kidpaintcolor.fragment;
 
+import android.animation.Animator;
 import android.view.View;
+import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -80,17 +82,56 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick(R.id.homeSetting)
     public void handleSlideSetting() {
-      /*  TranslateAnimation animate;
-        if (isOpenSetting) {
-            animate = new TranslateAnimation(0, -0, 0, 0);
-            isOpenSetting = false;
+        if (((RelativeLayout.LayoutParams) layoutSound.getLayoutParams()).leftMargin == 0) {
+            layoutSound.animate().translationX((float)getResources().getDimensionPixelSize(R.dimen.main_sound_margin_left)).setDuration(300).setInterpolator(new BounceInterpolator()).setListener(new AnimationLeft()).start();
         } else {
-            animate = new TranslateAnimation(0, (layoutSound.getWidth() * 2) / 3 - 10, 0, 0);
-            isOpenSetting = true;
+            layoutSound.animate().translationX((float) getResources().getDimensionPixelSize(R.dimen.main_sound_margin_left) * -1).setDuration(300).setInterpolator(new BounceInterpolator()).setListener(new AnimationRight()).start();
         }
-        animate.setDuration(300);
-        animate.setFillAfter(true);
-        layoutSound.startAnimation(animate);*/
 
     }
+
+    class AnimationLeft implements Animator.AnimatorListener {
+        AnimationLeft() {
+        }
+
+        public void onAnimationStart(Animator animation) {
+        }
+
+        public void onAnimationEnd(Animator animation) {
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) layoutSound.getLayoutParams();
+            params.leftMargin = getResources().getDimensionPixelSize(R.dimen.main_sound_margin_left);
+            layoutSound.setTranslationX(0.0f);
+            layoutSound.setLayoutParams(params);
+        }
+
+        public void onAnimationCancel(Animator animation) {
+        }
+
+        public void onAnimationRepeat(Animator animation) {
+        }
+    }
+
+    /* renamed from: com.coloring.book.animals.fragment.MainFragment.8.2 */
+    class AnimationRight implements Animator.AnimatorListener {
+        AnimationRight() {
+        }
+
+        public void onAnimationStart(Animator animation) {
+        }
+
+        public void onAnimationEnd(Animator animation) {
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) layoutSound.getLayoutParams();
+            params.leftMargin = 0;
+            layoutSound.setTranslationX(0.0f);
+            layoutSound.setLayoutParams(params);
+        }
+
+        public void onAnimationCancel(Animator animation) {
+        }
+
+        public void onAnimationRepeat(Animator animation) {
+        }
+    }
+
+
 }

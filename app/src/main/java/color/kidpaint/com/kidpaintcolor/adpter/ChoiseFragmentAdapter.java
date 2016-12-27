@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import color.kidpaint.com.kidpaintcolor.R;
+import color.kidpaint.com.kidpaintcolor.adpter.viewHolder.ChoiseViewholder;
 
 /**
  * Created by Tung Nguyen on 12/22/2016.

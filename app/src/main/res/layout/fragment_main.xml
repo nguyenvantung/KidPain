@@ -35,15 +35,17 @@
             android:visibility="gone" />
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/listDraw"
+            android:id="@+id/listBucket"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/listPencil"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:visibility="visible"
+            android:paddingTop="10dp"/>
 
         <ImageView
             android:id="@+id/footerToolRight"
