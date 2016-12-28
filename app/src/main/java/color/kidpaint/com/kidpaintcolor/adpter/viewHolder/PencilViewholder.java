@@ -27,7 +27,9 @@ public class PencilViewholder extends RecyclerView.ViewHolder implements View.On
 
     @Override
     public void onClick(View view) {
-        onClickItemDraw.onclickItemDraw(pencil.color, true);
+        if (onClickItemDraw != null){
+            onClickItemDraw.onclickItemDraw(pencil.color, true);
+        }
     }
 
     public void setData(Pencil data){

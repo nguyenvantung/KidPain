@@ -1,8 +1,10 @@
 package color.kidpaint.com.kidpaintcolor.fragment;
 
+import android.graphics.Typeface;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import color.kidpaint.com.kidpaintcolor.R;
@@ -13,6 +15,9 @@ import color.kidpaint.com.kidpaintcolor.widget.ItemOffsetDecoration;
  * Created by Tung Nguyen on 12/22/2016.
  */
 public class ChoiseItemFragment extends BaseFragment{
+
+    @Bind(R.id.gradient_textview)
+    TextView tvTitle;
 
     public int[] listAminal = {R.drawable.small_picture_1, R.drawable.small_picture_2, R.drawable.small_picture_3, R.drawable.small_picture_4, R.drawable.small_picture_5,
             R.drawable.small_picture_6, R.drawable.small_picture_7, R.drawable.small_picture_8, R.drawable.small_picture_9, R.drawable.small_picture_10, R.drawable.small_picture_11,
@@ -43,6 +48,8 @@ public class ChoiseItemFragment extends BaseFragment{
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(getActivity(), R.dimen.item_image);
         recyclerView.addItemDecoration(itemDecoration);
+        Typeface font1 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/cooper_black.ttf");
+        tvTitle.setTypeface(font1);
 
     }
 

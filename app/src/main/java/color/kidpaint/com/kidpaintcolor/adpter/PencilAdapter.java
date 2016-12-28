@@ -36,9 +36,9 @@ public class PencilAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == HEADER){
-            return new PencilViewholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pencil, parent, false));
-        }else {
             return new PickerViewholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.image_item, parent, false));
+        }else {
+            return new PencilViewholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pencil, parent, false));
         }
 
     }
@@ -48,9 +48,10 @@ public class PencilAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         if (position > 0){
             PencilViewholder viewholder = (PencilViewholder) holder;
             viewholder.setOnClickItemDraw(onClickItemDraw);
-            viewholder.setData(pencilList.get(position));
+            viewholder.setData(pencilList.get(position - 1));
         }else {
             PickerViewholder pickerViewholder = (PickerViewholder) holder;
+            pickerViewholder.setData(R.drawable.color_picker);
         }
 
     }
@@ -66,6 +67,6 @@ public class PencilAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return pencilList.size();
+        return pencilList.size() + 1;
     }
 }

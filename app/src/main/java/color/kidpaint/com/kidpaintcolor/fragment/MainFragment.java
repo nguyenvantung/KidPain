@@ -1,8 +1,10 @@
 package color.kidpaint.com.kidpaintcolor.fragment;
 
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +19,25 @@ import color.kidpaint.com.kidpaintcolor.bean.Pencil;
 import color.kidpaint.com.kidpaintcolor.event.OnClickItemDraw;
 import color.kidpaint.com.kidpaintcolor.event.OnClickToolDraw;
 import color.kidpaint.com.kidpaintcolor.util.ColoringUtility;
+import color.kidpaint.com.kidpaintcolor.util.FragmentUtil;
 
 /**
  * Created by Tung Nguyen on 12/26/2016.
  */
 public class MainFragment extends BaseFragment implements OnClickItemDraw, OnClickToolDraw{
+    private static final String KEY_DRAWABLE = "key_drawable";
 
-    public static MainFragment newInstance(){
-        return new MainFragment();
+    private int drawableData;
+
+    @Bind(R.id.mainImage)
+    ImageView imgMain;
+
+    public static MainFragment newInstance(int drawable){
+        MainFragment mainFragment = new MainFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(KEY_DRAWABLE, drawable);
+        mainFragment.setArguments(bundle);
+        return mainFragment;
     }
 
     private int[] listPencil = { R.drawable.pencil_aquamarine, R.drawable.pencil_beige, R.drawable.pencil_black, R.drawable.pencil_blue, R.drawable.pencil_bright_green,
@@ -67,16 +80,19 @@ public class MainFragment extends BaseFragment implements OnClickItemDraw, OnCli
     protected void initData() {
         initTool();
         PencilAdapter pencilAdapter = new PencilAdapter(listPencilData);
-        //pencilAdapter.setOnClickItemDraw(this);
+        pencilAdapter.setOnClickItemDraw(this);
         recyclerViewPencil.setAdapter(pencilAdapter);
         //
         BucketAdapter bucketAdapter = new BucketAdapter(listBucketData);
-        // bucketAdapter.setOnClickItemDraw(this);
+         bucketAdapter.setOnClickItemDraw(this);
         recyclerViewBucket.setAdapter(bucketAdapter);
         //
         ColorDrawToolAdapter adapter = new ColorDrawToolAdapter(listTool);
-        //adapter.setOnClickToolDraw(this);
+        adapter.setOnClickToolDraw(this);
         recyclerViewTool.setAdapter(adapter);
+        // init main view
+        drawableData = this.getArguments().getInt(KEY_DRAWABLE);
+        imgMain.setImageDrawable(getResources().getDrawable(drawableData));
 
     }
 
@@ -85,6 +101,10 @@ public class MainFragment extends BaseFragment implements OnClickItemDraw, OnCli
             Pencil pencil = new Pencil();
             pencil.drawable = listPencil[i];
             pencil.color = ColoringUtility.COLORS_MAPS.get(i);
+            if (i == 0){
+
+            }
+            pencil.select = false;
             listPencilData.add(pencil);
         }
 
@@ -104,6 +124,12 @@ public class MainFragment extends BaseFragment implements OnClickItemDraw, OnCli
 
     @Override
     public void onClickTool(int posion) {
+        switch (posion){
+            case 4:
+                FragmentUtil.pushFragment(getActivity(), ShareFragment.newInstance(), null);
+                break;
+        }
 
     }
+
 }

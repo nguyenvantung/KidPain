@@ -5,4 +5,10 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="item_image">5dp</dimen>
     <dimen name="main_sound_margin_left">-40.0dip</dimen>
+    <dimen name="item_image_draw">10dp</dimen>
+
+    <dimen name="ambilwarna_hsvHeight">240dp</dimen>
+    <dimen name="ambilwarna_hsvWidth">240dp</dimen>
+    <dimen name="ambilwarna_hueWidth">30dp</dimen>
+    <dimen name="ambilwarna_spacer">8dp</dimen>
 </resources>

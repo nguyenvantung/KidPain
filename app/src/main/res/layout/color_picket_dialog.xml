@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ambilwarna_dialogView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/color_picker_bgr">
+
+
+    <RelativeLayout
+        android:id="@+id/viewContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:padding="30dp">
+
+        <LinearLayout
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/kids_alphacheckered_tiled" />
+
+                <View
+                    android:id="@+id/oldColor"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#faa" />
+            </FrameLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/ambilwarna_spacer"
+                android:paddingRight="@dimen/ambilwarna_spacer"
+                android:src="@drawable/color_arrow_right"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/kids_alphacheckered_tiled" />
+
+                <View
+                    android:id="@+id/newColor"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#aaf" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <color.kidpaint.com.kidpaintcolor.widget.ColorPicketSquare
+            android:layout_marginTop="20dp"
+            android:id="@+id/viewSatBri"
+            android:layout_width="@dimen/ambilwarna_hsvWidth"
+            android:layout_height="@dimen/ambilwarna_hsvHeight"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/state"
+            android:layerType="software" />
+
+
+        <ImageView
+            android:id="@+id/viewHue"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/viewSatBri"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_color_picket"
+            android:scaleType="fitXY"
+            android:src="@drawable/color_hue" />
+
+
+        <ImageView
+            android:id="@+id/alphaCheckered"
+            android:layout_width="@dimen/ambilwarna_hueWidth"
+            android:layout_height="@dimen/ambilwarna_hsvHeight"
+            android:layout_marginLeft="@dimen/ambilwarna_spacer"
+            android:layout_toRightOf="@id/viewHue"
+            android:scaleType="fitXY"
+            android:src="@drawable/kids_alphacheckered_tiled"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/overlay"
+            android:layout_width="@dimen/ambilwarna_hueWidth"
+            android:layout_height="@dimen/ambilwarna_hsvHeight"
+            android:layout_marginLeft="@dimen/ambilwarna_spacer"
+            android:layout_toRightOf="@id/viewHue"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/cursor"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginBottom="-15dp"
+            android:scaleType="matrix"
+            android:src="@drawable/color_cursor" />
+
+        <ImageView
+            android:id="@+id/alphaCursor"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:scaleType="matrix"
+            android:src="@drawable/color_cursor"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/target"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:scaleType="matrix"
+            android:src="@drawable/color_target" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

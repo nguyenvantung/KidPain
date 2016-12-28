@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:paddingTop="130dp"
+        android:paddingTop="135dp"
         android:src="@drawable/pencil_aquamarine" />
 
 </LinearLayout>

@@ -11,17 +11,20 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/footer_tool"
         android:layout_below="@+id/header_tool">
+
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/mainImage"/>
+            android:id="@+id/mainImage"
+            android:src="@drawable/small_picture_1"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
     </FrameLayout>
 
 
     <RelativeLayout
         android:id="@+id/footer_tool"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/play_color_bar">
 
@@ -38,14 +41,14 @@
             android:id="@+id/listBucket"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/listPencil"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible"
-            android:paddingTop="10dp"/>
+            android:paddingTop="5dp"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/footerToolRight"
@@ -62,7 +65,7 @@
     <RelativeLayout
         android:id="@+id/header_tool"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:background="@drawable/play_tool_bar">
 
         <android.support.v7.widget.RecyclerView

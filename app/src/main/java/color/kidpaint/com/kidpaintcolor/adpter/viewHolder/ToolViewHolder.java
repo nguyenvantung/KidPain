@@ -34,6 +34,8 @@ public class ToolViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     @Override
     public void onClick(View view) {
-       onClickToolDraw.onClickTool(getAdapterPosition());
+        if(onClickToolDraw != null){
+            onClickToolDraw.onClickTool(getAdapterPosition());
+        }
     }
 }
