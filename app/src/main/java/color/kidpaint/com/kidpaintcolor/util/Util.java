@@ -18,10 +18,16 @@ public class Util {
     }
 
     public static MediaPlayer playMusic(Activity activity){
-        MediaPlayer player = MediaPlayer.create(activity, R.raw.bgr_be_happy);
-        AudioManager audioManager = (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
-        player.setVolume(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC), audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
-        player.setLooping(true);
+        MediaPlayer player = null;
+        if (player == null){
+            player = MediaPlayer.create(activity, R.raw.bgr_be_happy);
+            AudioManager audioManager = (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
+            if (audioManager != null){
+                player.setVolume(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC), audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+            }
+            player.setLooping(true);
+        }
+
         return player;
     }
 

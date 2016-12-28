@@ -17,12 +17,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (Util.playMusic(this).isPlaying()){
+            Util.playMusic(this).stop();
+        }
+    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (Util.playMusic(this).isPlaying()){
-            Util.playMusic(this).stop();
-        }
+
     }
 }
