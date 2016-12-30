@@ -4,7 +4,6 @@ import android.content.Context;
 import android.media.MediaPlayer;
 
 import java.util.Map;
-import java.util.Random;
 
 /**
  * Created by Tung Nguyen on 12/28/2016.
@@ -78,7 +77,7 @@ public class MySoundManager {
         this.mContext = context;
     }
 
-    public synchronized void playSound(String sound) {
+  /*  public synchronized void playSound(String sound) {
         try {
             if (new Preferences(this.mContext).isSoundSettings()) {
                 if (((Integer) this.mMap.get(sound)) != null) {
@@ -99,9 +98,9 @@ public class MySoundManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    public synchronized void playSF() {
+   /* public synchronized void playSF() {
         try {
             if (new Preferences(this.mContext).isSoundSettings()) {
                 MediaPlayer mediaPlayer = MediaPlayer.create(this.mContext, this.mContext.getResources().getIdentifier("sf_" + String.valueOf(new Random().nextInt(16)), "raw", this.mContext.getPackageName()));
@@ -112,6 +111,6 @@ public class MySoundManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 }

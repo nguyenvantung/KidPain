@@ -3,9 +3,6 @@ package color.kidpaint.com.kidpaintcolor.util;
 import android.animation.Animator;
 import android.content.Context;
 import android.view.View;
-import android.widget.RelativeLayout;
-
-import color.kidpaint.com.kidpaintcolor.R;
 
 /**
  * Created by Tung Nguyen on 12/28/2016.
@@ -22,10 +19,10 @@ public class AnimationTop implements Animator.AnimatorListener {
     }
 
     public void onAnimationEnd(Animator animation) {
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
+       /* RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
         params.topMargin = context.getResources().getDimensionPixelSize(R.dimen.item_image_draw);
-        view.setTranslationX(0.0f);
-        view.setLayoutParams(params);
+        view.setTranslationY(0.0f);
+        view.setLayoutParams(params);*/
     }
 
     public void onAnimationCancel(Animator animation) {

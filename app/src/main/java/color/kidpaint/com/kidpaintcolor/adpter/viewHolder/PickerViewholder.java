@@ -24,7 +24,7 @@ public class PickerViewholder extends RecyclerView.ViewHolder implements View.On
     }
 
     public void setData(int drawable) {
-        imageView.setImageDrawable(imageView.getContext().getDrawable(drawable));
+        //imageView.setImageDrawable(imageView.getContext().getDrawable(drawable));
     }
 
     @Override

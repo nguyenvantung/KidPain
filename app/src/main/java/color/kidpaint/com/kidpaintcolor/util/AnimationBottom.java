@@ -3,7 +3,6 @@ package color.kidpaint.com.kidpaintcolor.util;
 import android.animation.Animator;
 import android.content.Context;
 import android.view.View;
-import android.widget.RelativeLayout;
 
 /**
  * Created by Tung Nguyen on 12/28/2016.
@@ -21,10 +20,10 @@ public class AnimationBottom implements Animator.AnimatorListener {
     }
 
     public void onAnimationEnd(Animator animation) {
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
+       /* RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
         params.topMargin = 0;
         view.setTranslationX(0.0f);
-        view.setLayoutParams(params);
+        view.setLayoutParams(params);*/
     }
 
     public void onAnimationCancel(Animator animation) {

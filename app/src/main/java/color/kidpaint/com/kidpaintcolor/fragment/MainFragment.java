@@ -16,15 +16,18 @@ import color.kidpaint.com.kidpaintcolor.adpter.ColorDrawToolAdapter;
 import color.kidpaint.com.kidpaintcolor.adpter.PencilAdapter;
 import color.kidpaint.com.kidpaintcolor.bean.Bucket;
 import color.kidpaint.com.kidpaintcolor.bean.Pencil;
+import color.kidpaint.com.kidpaintcolor.constan.AppConstance;
+import color.kidpaint.com.kidpaintcolor.event.OnClickItemBush;
 import color.kidpaint.com.kidpaintcolor.event.OnClickItemDraw;
 import color.kidpaint.com.kidpaintcolor.event.OnClickToolDraw;
 import color.kidpaint.com.kidpaintcolor.util.ColoringUtility;
 import color.kidpaint.com.kidpaintcolor.util.FragmentUtil;
+import color.kidpaint.com.kidpaintcolor.util.SharedPreUtils;
 
 /**
  * Created by Tung Nguyen on 12/26/2016.
  */
-public class MainFragment extends BaseFragment implements OnClickItemDraw, OnClickToolDraw{
+public class MainFragment extends BaseFragment implements OnClickItemDraw, OnClickToolDraw, OnClickItemBush{
     private static final String KEY_DRAWABLE = "key_drawable";
 
     private int drawableData;
@@ -62,6 +65,8 @@ public class MainFragment extends BaseFragment implements OnClickItemDraw, OnCli
     @Bind(R.id.listHeaderTool)
     RecyclerView recyclerViewTool;
 
+    private PencilAdapter pencilAdapter;
+
 
     @Override
     protected int getLayoutId() {
@@ -79,9 +84,10 @@ public class MainFragment extends BaseFragment implements OnClickItemDraw, OnCli
     @Override
     protected void initData() {
         initTool();
-        PencilAdapter pencilAdapter = new PencilAdapter(listPencilData);
+        pencilAdapter = new PencilAdapter(listPencilData);
         pencilAdapter.setOnClickItemDraw(this);
         recyclerViewPencil.setAdapter(pencilAdapter);
+        SharedPreUtils.setIntegerPreference(getActivity(),AppConstance.NUMBER_CHOISE, 0);
         //
         BucketAdapter bucketAdapter = new BucketAdapter(listBucketData);
          bucketAdapter.setOnClickItemDraw(this);
@@ -101,10 +107,8 @@ public class MainFragment extends BaseFragment implements OnClickItemDraw, OnCli
             Pencil pencil = new Pencil();
             pencil.drawable = listPencil[i];
             pencil.color = ColoringUtility.COLORS_MAPS.get(i);
-            if (i == 0){
-
-            }
             pencil.select = false;
+            pencil.position = i;
             listPencilData.add(pencil);
         }
 
@@ -132,4 +136,20 @@ public class MainFragment extends BaseFragment implements OnClickItemDraw, OnCli
 
     }
 
+    @Override
+    public void selectItemBush(Pencil pencil) {
+        pencilAdapter.notifyDataSetChanged();
+        setDataSelect(pencil);
+
+    }
+
+    public void setDataSelect(Pencil pencil){
+        for (int i = 0; i < listPencilData.size(); i++){
+            if (pencil.position != listPencilData.get(i).position){
+                listPencilData.get(i).select = false;
+            }else {
+                listPencilData.get(i).select = true;
+            }
+        }
+    }
 }

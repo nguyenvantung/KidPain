@@ -1,8 +1,6 @@
 package color.kidpaint.com.kidpaintcolor.util;
 
 import android.app.Activity;
-import android.content.Context;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 
 import color.kidpaint.com.kidpaintcolor.R;
@@ -21,10 +19,6 @@ public class Util {
         MediaPlayer player = null;
         if (player == null){
             player = MediaPlayer.create(activity, R.raw.bgr_be_happy);
-            AudioManager audioManager = (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
-            if (audioManager != null){
-                player.setVolume(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC), audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
-            }
             player.setLooping(true);
         }
 

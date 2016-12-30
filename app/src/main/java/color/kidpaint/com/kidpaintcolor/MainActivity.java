@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import color.kidpaint.com.kidpaintcolor.fragment.HomeFragment;
 import color.kidpaint.com.kidpaintcolor.util.FragmentUtil;
-import color.kidpaint.com.kidpaintcolor.util.Util;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if (Util.playMusic(this).isPlaying()){
+       /* if (Util.playMusic(this).isPlaying()){
             Util.playMusic(this).stop();
-        }
+        }*/
     }
 
     @Override

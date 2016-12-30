@@ -47,8 +47,8 @@
             android:id="@+id/listPencil"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="5dp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:layout_alignParentBottom="true"/>
 
         <ImageView
             android:id="@+id/footerToolRight"

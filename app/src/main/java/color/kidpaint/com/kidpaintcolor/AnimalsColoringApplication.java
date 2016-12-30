@@ -10,8 +10,14 @@ public class AnimalsColoringApplication extends Application {
     private static final String PROPERTY_ID = "UA-52348719-11";
     private static AnimalsColoringApplication mInstance;
 
+    private static AnimalsColoringApplication instance;
+
     public AnimalsColoringApplication() {
-        mInstance = this;
+        instance = this;
+    }
+
+    public static AnimalsColoringApplication getInstance() {
+        return instance;
     }
 
     public void onCreate() {

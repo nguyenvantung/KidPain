@@ -6,4 +6,5 @@ package color.kidpaint.com.kidpaintcolor.constan;
 public class AppConstance {
     public static boolean isPlaymusic = false;
     public static boolean isSound = false;
+    public static final String  NUMBER_CHOISE= "ITEM_CHOISE_NUMBER";
 }

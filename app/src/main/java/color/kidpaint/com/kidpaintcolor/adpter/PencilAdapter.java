@@ -11,7 +11,7 @@ import color.kidpaint.com.kidpaintcolor.R;
 import color.kidpaint.com.kidpaintcolor.adpter.viewHolder.PencilViewholder;
 import color.kidpaint.com.kidpaintcolor.adpter.viewHolder.PickerViewholder;
 import color.kidpaint.com.kidpaintcolor.bean.Pencil;
-import color.kidpaint.com.kidpaintcolor.event.OnClickItemDraw;
+import color.kidpaint.com.kidpaintcolor.event.OnClickItemBush;
 
 /**
  * Created by Tung Nguyen on 12/27/2016.
@@ -23,9 +23,9 @@ public class PencilAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private List<Pencil> pencilList = new ArrayList<>();
 
-    private OnClickItemDraw onClickItemDraw;
+    private OnClickItemBush onClickItemDraw;
 
-    public void setOnClickItemDraw(OnClickItemDraw onClickItemDraw){
+    public void setOnClickItemDraw(OnClickItemBush onClickItemDraw){
         this.onClickItemDraw = onClickItemDraw;
     }
 
@@ -36,7 +36,7 @@ public class PencilAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == HEADER){
-            return new PickerViewholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.image_item, parent, false));
+            return new PickerViewholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.image_picket, parent, false));
         }else {
             return new PencilViewholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pencil, parent, false));
         }
@@ -49,6 +49,7 @@ public class PencilAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             PencilViewholder viewholder = (PencilViewholder) holder;
             viewholder.setOnClickItemDraw(onClickItemDraw);
             viewholder.setData(pencilList.get(position - 1));
+            viewholder.setAnimation(pencilList.get(position - 1).select);
         }else {
             PickerViewholder pickerViewholder = (PickerViewholder) holder;
             pickerViewholder.setData(R.drawable.color_picker);

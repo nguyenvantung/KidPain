@@ -7,4 +7,5 @@ public class Pencil {
     public int drawable;
     public int color;
     public boolean select;
+    public int position = 0;
 }
