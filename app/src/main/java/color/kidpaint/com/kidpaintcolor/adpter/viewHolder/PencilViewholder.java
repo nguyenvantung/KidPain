@@ -10,11 +10,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import color.kidpaint.com.kidpaintcolor.R;
 import color.kidpaint.com.kidpaintcolor.bean.Pencil;
-import color.kidpaint.com.kidpaintcolor.constan.AppConstance;
 import color.kidpaint.com.kidpaintcolor.event.OnClickItemBush;
 import color.kidpaint.com.kidpaintcolor.util.AnimationBottom;
 import color.kidpaint.com.kidpaintcolor.util.AnimationTop;
-import color.kidpaint.com.kidpaintcolor.util.SharedPreUtils;
 
 /**
  * Created by Tung Nguyen on 12/27/2016.
@@ -45,15 +43,10 @@ public class PencilViewholder extends RecyclerView.ViewHolder implements View.On
 
     public void setAnimation(boolean select){
         if (select) {
-            SharedPreUtils.setIntegerPreference(imgItem.getContext(), AppConstance.NUMBER_CHOISE, getAdapterPosition());
             layoutPencil.animate().translationY((float) imgItem.getContext().getResources()
                     .getDimensionPixelSize(R.dimen.item_select)).setDuration(300)
                     .setInterpolator(new BounceInterpolator()).setListener(new AnimationTop(layoutPencil, itemView.getContext())).start();
 
-     /*   }else if (getAdapterPosition() == SharedPreUtils.getIntegerPreference(imgItem.getContext(), AppConstance.NUMBER_CHOISE, 0)){
-            layoutPencil.animate().translationY((float) imgItem.getContext().getResources()
-                    .getDimensionPixelSize(R.dimen.item_un_select)).setDuration(300)
-                    .setInterpolator(new BounceInterpolator()).setListener(new AnimationBottom(layoutPencil, itemView.getContext())).start();*/
         }else {
             layoutPencil.animate().translationY((float) imgItem.getContext().getResources()
                     .getDimensionPixelSize(R.dimen.item_default)).setDuration(300)
