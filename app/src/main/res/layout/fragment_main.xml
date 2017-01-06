@@ -5,20 +5,13 @@
     android:orientation="vertical">
 
 
-    <FrameLayout
+    <color.kidpaint.com.kidpaintcolor.widget.DrawingSurface
         android:id="@+id/mainPlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/footer_tool"
         android:layout_below="@+id/header_tool">
-
-        <ImageView
-            android:id="@+id/mainImage"
-            android:src="@drawable/small_picture_1"
-            android:layout_gravity="center"
-            android:layout_width="300dp"
-            android:layout_height="300dp" />
-    </FrameLayout>
+    </color.kidpaint.com.kidpaintcolor.widget.DrawingSurface>
 
 
     <RelativeLayout
@@ -68,10 +61,8 @@
         android:layout_height="70dp"
         android:background="@drawable/play_tool_bar">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/listHeaderTool"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <include
+            layout="@layout/layout_tool_color"/>
 
         <ImageView
             android:id="@+id/headerToolLeft"

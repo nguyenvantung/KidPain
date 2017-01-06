@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ *  Paintroid: An image manipulation application for Android.
+ *  Copyright (C) 2010-2015 The Catrobat Team
+ *  (<http://developer.catrobat.org/credits>)
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- colors for presets in color picker -->
+    <array name="preset_colors">
+        <item name="blue1">@color/blue</item>
+        <item name="blue2">@color/blue</item>
+        <item name="green1">@color/green</item>
+        <item name="green2">@color/green</item>
+        <item name="brown1">@color/brown</item>
+        <item name="brown2">@color/brown</item>
+        <item name="brown3">@color/brown</item>
+        <item name="brown4">@color/brown</item>
+        <item name="purple1">@color/purple</item>
+        <item name="purple2">@color/purple</item>
+        <item name="purple3">@color/purple</item>
+        <item name="purple4">@color/purple</item>
+        <item name="red1">@color/red</item>
+        <item name="orange1">@color/orange</item>
+        <item name="orange2">@color/orange</item>
+        <item name="yellow">@color/orange</item>
+        <item name="black">@color/orange</item>
+        <item name="darkgray">@color/orange</item>
+        <item name="white">@color/orange</item>
+        <item name="transparent">@color/orange</item>
+    </array>
+    <array name="new_image">
+        <item name="menu_new_image_empty_image">image</item>
+        <item name="menu_new_image_from_camera">camera</item>
+    </array>
+
+    <string-array name="text_tool_font_array">
+        <item>monospace</item>
+        <item>serif</item>
+        <item>serif</item>
+    </string-array>
+
+    <string-array name="text_tool_size_array" translatable="false">
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>60</item>
+    </string-array>
+
+</resources>
